@@ -7,8 +7,8 @@ var mesh = new Array(size);
     }
     //Viri: funcion itera por las posiciones y buscar que el lugar este disponible
 function Encontrar(mesh,dato2){
-        let buscarX =dato2[0][0];
-        let buscarY = dato2[0][1];
+        let buscarX =dato2[0];
+        let buscarY = dato2[1];
         for (i=0;i<size;i++) {
         for(let j=0; j<size; j++){
             if(typeof mesh[i][j] === 'number'&& i === buscarX && j === buscarY){
@@ -22,8 +22,8 @@ function Encontrar(mesh,dato2){
     }
     }
    //mesh[0][1] = 0;
-Encontrar(mesh,[1,3]);
-    console.log(mesh);
+//Encontrar(mesh,[1,3]);
+//    console.log(mesh);
 
     //Sergio: funcion que posiciona 0 por donde pasa la reina
 function llenarCeros(arry) {
@@ -47,7 +47,16 @@ function llenarCeros(arry) {
                             arry[1][index][y] = 0;
                         }
                     }
-                    //console.log(mesh);   
+
+                    for (let index = 0; index < arry[1][i].length; index++) {
+                        if(arry[1][index][y] == 1){
+                            continue;
+                        }else{
+                            arry[1][index][index] = 0;
+                        }
+                        
+                    }
+                    console.log(mesh);   
                 }
             }
         }
@@ -67,7 +76,9 @@ function ponerReina(position, mesh){
         }
         ponerReina(first, mesh)
 
+
+
 }
    
    
-  console.log(queenProblem(8,[1,5]));
+  console.log(queenProblem(8,[2,2]));

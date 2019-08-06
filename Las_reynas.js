@@ -54,7 +54,7 @@ function llenarCeros(arry) {
                         if(arry[1][x][y] == 1){
                             continue;
                         }else{
-                            arry[1][x][y] = 5;
+                            arry[1][x][y] = 0;
                             // console.log(mesh);
                         }
                         
@@ -68,7 +68,7 @@ function llenarCeros(arry) {
                         if(arry[1][x][y] == 1){
                             continue;
                         }else{
-                            arry[1][x][y] = 2;
+                            arry[1][x][y] = 0;
                             //console.log(mesh);
                         }
                         
@@ -82,7 +82,7 @@ function llenarCeros(arry) {
                         if(arry[1][x][y] == 1){
                             continue;
                         }else{
-                            arry[1][x][y] = 3;
+                            arry[1][x][y] = 0;
                             //console.log(mesh);
                         }
                         
@@ -97,7 +97,7 @@ function llenarCeros(arry) {
                         if(arry[1][x][y] == 1){
                             continue;
                         }else{
-                            arry[1][x][y] = 4;
+                            arry[1][x][y] = 0;
                             //console.log(mesh);
                         }
                         

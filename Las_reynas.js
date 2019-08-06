@@ -3,7 +3,7 @@ function queenProblem(size, first){
 var mesh = new Array(size);
     for(var i=0; i<size; i++){
       mesh[i] = new Array(size);
-      mesh[i].fill(NaN);
+      mesh[i].fill(2);
     }
     //console.log(mesh);
     
@@ -13,7 +13,7 @@ function Encontrar(mesh,dato2){
         let buscarY = dato2[1];
         for (i=0;i<size;i++) {
         for(let j=0; j<size; j++){
-            if(typeof mesh[i][j] === 'number'&& i === buscarX && j === buscarY){
+            if(mesh[i][j] === 2 && i === buscarX && j === buscarY){
                 return true;
             }else if(mesh[i][j]==0 && i === buscarX && j === buscarY ){
                 return false;
@@ -102,11 +102,13 @@ function llenarCeros(arry) {
                         }
                         
                     }
-                    console.log(mesh);
+                    //console.log(mesh);
                     
                 }
             }
         }
+
+        return arry[1];
     }
 
        
@@ -119,73 +121,22 @@ function ponerReina(position, mesh){
         //console.log(mesh);
         //return [];
         }
-        
-        }
-        ponerReina(first, mesh)
+        return mesh;
+}
+
+
+console.log(ponerReina(first, mesh));
+
+        // ponerReina(first, mesh)
 
 
 
 }
    
-console.log(queenProblem(8,[0,0]));
-console.log(queenProblem(8,[0,1]));
-console.log(queenProblem(8,[0,2]));
-console.log(queenProblem(8,[0,3]));
-console.log(queenProblem(8,[0,4]));
-console.log(queenProblem(8,[0,5]));
-console.log(queenProblem(8,[0,6]));
-console.log(queenProblem(8,[0,7]));
-  console.log(queenProblem(8,[1,1]));
-  console.log(queenProblem(8,[1,2]));
-  console.log(queenProblem(8,[1,3]));
-  console.log(queenProblem(8,[1,4]));
-  console.log(queenProblem(8,[1,5]));
-  console.log(queenProblem(8,[1,6]));
-  console.log(queenProblem(8,[1,7]));
-  console.log(queenProblem(8,[2,1]));
-  console.log(queenProblem(8,[2,2]));
-  console.log(queenProblem(8,[2,3]));
-  console.log(queenProblem(8,[2,4]));
-  console.log(queenProblem(8,[2,5]));
-  console.log(queenProblem(8,[2,6]));
-  console.log(queenProblem(8,[2,7]));
-  console.log(queenProblem(8,[3,1]));
-  console.log(queenProblem(8,[3,2]));
-  console.log(queenProblem(8,[3,3]));
-  console.log(queenProblem(8,[3,4]));
-  console.log(queenProblem(8,[3,5]));
-  console.log(queenProblem(8,[3,6]));
-  console.log(queenProblem(8,[3,7]));
-  console.log(queenProblem(8,[4,1]));
-  console.log(queenProblem(8,[4,2]));
-  console.log(queenProblem(8,[4,3]));
-  console.log(queenProblem(8,[4,4]));
-  console.log(queenProblem(8,[4,5]));
-  console.log(queenProblem(8,[4,6]));
-  console.log(queenProblem(8,[4,7]));
-  console.log(queenProblem(8,[5,1]));
-  console.log(queenProblem(8,[5,2]));
-  console.log(queenProblem(8,[5,3]));
-  console.log(queenProblem(8,[5,4]));
-  console.log(queenProblem(8,[5,5]));
-  console.log(queenProblem(8,[5,6]));
-  console.log(queenProblem(8,[5,7]));
-  console.log(queenProblem(8,[6,1]));
-  console.log(queenProblem(8,[6,2]));
-  console.log(queenProblem(8,[6,3]));
-  console.log(queenProblem(8,[6,4]));
-  console.log(queenProblem(8,[6,5]));
-  console.log(queenProblem(8,[6,6]));
-  console.log(queenProblem(8,[6,7]));
-  console.log(queenProblem(8,[7,1]));
-  console.log(queenProblem(8,[7,2]));
-  console.log(queenProblem(8,[7,3]));
-  console.log(queenProblem(8,[7,4]));
-  console.log(queenProblem(8,[7,5]));
-  console.log(queenProblem(8,[7,6]));
-  console.log(queenProblem(8,[7,7]));
 
+ 
 
+console.log(queenProblem(8,[2,6]));
 
 
 

@@ -3,7 +3,7 @@ function queenProblem(size, first){
 var mesh = new Array(size);
     for(var i=0; i<size; i++){
       mesh[i] = new Array(size);
-      mesh[i].fill(NaN);
+      mesh[i].fill(2);
     }
     //console.log(mesh);
     
@@ -13,7 +13,7 @@ function Encontrar(mesh,dato2){
         let buscarY = dato2[1];
         for (i=0;i<size;i++) {
         for(let j=0; j<size; j++){
-            if(typeof mesh[i][j] === 'number'&& i === buscarX && j === buscarY){
+            if(mesh[i][j] === 2 && i === buscarX && j === buscarY){
                 return true;
             }else if(mesh[i][j]==0 && i === buscarX && j === buscarY ){
                 return false;
@@ -107,6 +107,8 @@ function llenarCeros(arry) {
                 }
             }
         }
+
+        return arry[1];
     }
 
        
@@ -119,9 +121,13 @@ function ponerReina(position, mesh){
         //console.log(mesh);
         //return [];
         }
-        
-        }
-        ponerReina(first, mesh)
+        return mesh;
+}
+
+
+console.log(ponerReina(first, mesh));
+
+        // ponerReina(first, mesh)
 
 
 
@@ -130,7 +136,7 @@ function ponerReina(position, mesh){
 
  
 
-
+console.log(queenProblem(8,[2,6]));
 
 
 

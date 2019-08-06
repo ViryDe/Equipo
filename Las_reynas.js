@@ -3,7 +3,7 @@ function queenProblem(size, first){
 var mesh = new Array(size);
     for(var i=0; i<size; i++){
       mesh[i] = new Array(size);
-      mesh[i].fill(2);
+      mesh[i].fill(3);
     }
     //console.log(mesh);
     
@@ -13,7 +13,7 @@ function Encontrar(mesh,dato2){
         let buscarY = dato2[1];
         for (i=0;i<size;i++) {
         for(let j=0; j<size; j++){
-            if(mesh[i][j] === 2 && i === buscarX && j === buscarY){
+            if(mesh[i][j] === 3 && i === buscarX && j === buscarY){
                 return true;
             }else if(mesh[i][j]==0 && i === buscarX && j === buscarY ){
                 return false;
@@ -125,9 +125,7 @@ function ponerReina(position, mesh){
 }
 
 
-console.log(ponerReina(first, mesh));
-
-        // ponerReina(first, mesh)
+return ponerReina(first, mesh);
 
 
 

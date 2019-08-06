@@ -5,8 +5,6 @@ var mesh = new Array(size);
       mesh[i] = new Array(size);
       mesh[i].fill(3);
     }
-    //console.log(mesh);
-    
     //Viri: funcion itera por las posiciones y buscar que el lugar este disponible
 function Encontrar(mesh,dato2){
         let buscarX =dato2[0];
@@ -23,10 +21,6 @@ function Encontrar(mesh,dato2){
         }
     }
     }
-   //mesh[0][1] = 0;
-//Encontrar(mesh,[1,3]);
-//    console.log(mesh);
-
     //Sergio: funcion que posiciona 0 por donde pasa la reina
 function llenarCeros(arry) {
         x = arry[0][0];
@@ -34,7 +28,6 @@ function llenarCeros(arry) {
         for (let i = 0; i < arry[1].length; i++) {
             for (let ii = 0; ii < arry[1].length; ii++) {
                 if(arry[1][i][ii] == 1){
-                    //console.log("te encontre", arry[1][i][ii]);
                     for (let index = 0; index < arry[1][i].length; index++) {
                         if(arry[1][x][index] == 1){
                             continue;
@@ -57,57 +50,41 @@ function llenarCeros(arry) {
                             arry[1][x][y] = 0;
                             // console.log(mesh);
                         }
-                        
                     }
                    // console.log(mesh);
                     x = arry[0][0];
                     y = arry[0][1];
-
                     //diagonal izquierda - arriba
                     for (x,y; x >= 0 && y >=0; x--,y--) {
                         if(arry[1][x][y] == 1){
                             continue;
                         }else{
                             arry[1][x][y] = 0;
-                            //console.log(mesh);
-                        }
-                        
+                        }  
                     }
-                   // console.log(mesh);
                     x = arry[0][0];
                     y = arry[0][1];
-
                     // vertical derecha y arriba
                     for (x,y; y < arry[1][i].length && x >= 0; x--,y++) {
                         if(arry[1][x][y] == 1){
                             continue;
                         }else{
                             arry[1][x][y] = 0;
-                            //console.log(mesh);
                         }
-                        
                     }
-                    //console.log(mesh);
                     x = arry[0][0];
                     y = arry[0][1];
-
-
                     // vertical hacia atras y abajo
                     for (x,y; x < arry[1][i].length && y >= 0; x++,y--) {
                         if(arry[1][x][y] == 1){
                             continue;
                         }else{
                             arry[1][x][y] = 0;
-                            //console.log(mesh);
                         }
-                        
                     }
-                    //console.log(mesh);
-                    
                 }
             }
         }
-
         return arry[1];
     }
 
@@ -121,19 +98,12 @@ function ponerReina(position, mesh){
         //console.log(mesh);
         //return [];
         }
+        // regresa solo pa primera prosicion de la reina, falto seguir el curso para las posiciones vacias
         return mesh;
 }
-
-
 return ponerReina(first, mesh);
-
-
-
 }
-   
-
- 
-
+// ejecucion para probar
 console.log(queenProblem(8,[2,6]));
 
 

@@ -139,4 +139,4 @@ function queenProblem(size, first){
         mesh = fillZeros(mesh);
         return mesh;
     }
-  }
+}

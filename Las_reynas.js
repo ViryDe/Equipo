@@ -5,7 +5,7 @@ var mesh = new Array(size);
       mesh[i] = new Array(size);
       mesh[i].fill(NaN);
     }
-    console.log(mesh);
+    //console.log(mesh);
     
     //Viri: funcion itera por las posiciones y buscar que el lugar este disponible
 function Encontrar(mesh,dato2){
@@ -58,7 +58,7 @@ function llenarCeros(arry) {
                         }
                         
                     }
-                    console.log(mesh);
+                    //console.log(mesh);
                     x = arry[0][0];
                     y = arry[0][1];
 
@@ -71,7 +71,7 @@ function llenarCeros(arry) {
                         }
                         
                     }
-                    console.log(mesh);
+                    //console.log(mesh);
                     x = arry[0][0];
                     y = arry[0][1];
 
@@ -84,13 +84,13 @@ function llenarCeros(arry) {
                         }
                         
                     }
-                    console.log(mesh);
+                   // console.log(mesh);
                     x = arry[0][0];
                     y = arry[0][1];
 
 
                     // vertical hacia atras y arriba
-                    for (x,y; y < 0; x++,y--) {
+                    for (x,y; y >= 0; x++,y--) {
                         if(arry[1][x][y] == 1){
                             continue;
                         }else{
@@ -110,9 +110,9 @@ function llenarCeros(arry) {
 function ponerReina(position, mesh){
         if(Encontrar(mesh, position)){
         mesh[position[0]][position[1]] = 1;
-        console.log(mesh);
+        //console.log(mesh);
         mesh = llenarCeros([position, mesh]);
-        console.log(mesh);
+        //console.log(mesh);
         //return [];
         }
         
